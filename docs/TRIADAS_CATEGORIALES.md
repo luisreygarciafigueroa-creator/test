@@ -1,6 +1,18 @@
 # Tríadas categoriales I.O.
 
-> **Procedencia:** transcripción operativa de las tablas de Fase de Avance y Fase de Retroceso. Fuente estructurada: [`data/iom_spec.json`](../data/iom_spec.json).
+> **Procedencia:** transcripción operativa de las fases de avance y retroceso. Fuente estructurada canónica: [`data/iom_spec.json`](../data/iom_spec.json).
+
+El marco I.O. se articula con **cinco perspectivas**:
+
+1. **Individualidad** (`Ind`)
+2. **Dualidad** (`D`)
+3. **Totalidad** (`Tot`)
+4. **Evolución** (`Evol`)
+5. **Involución** (`Invol`)
+
+Las columnas de cada tríada (izquierda, centro, derecha) corresponden a las tres primeras perspectivas (`Ind`, `D`, `Tot`), posiciones 0, 1 y 2. Las perspectivas cuarta y quinta (Evolución e Involución) no añaden columnas; se representan como secuencias vectoriales en [`VECTORES_4_5.md`](VECTORES_4_5.md).
+
+Las etiquetas se guardan en minúscula por convención de datos, con ortografía canónica del español (acentos incluidos).
 
 ## Fase de Avance
 

@@ -1,6 +1,6 @@
 # Reproducción de IOM
 
-La cadena ejecutable comprueba el modelo formalizado y reproduce una suite de experimentos empíricos estructurales. Los resultados son medibles, auditables y reproducibles de extremo a extremo.
+La cadena ejecutable comprueba el modelo formalizado del marco de **cinco perspectivas** (Individualidad, Dualidad, Totalidad, Evolución e Involución) y reproduce una suite de experimentos empíricos estructurales. Los resultados son medibles, auditables y reproducibles de extremo a extremo.
 
 ## Entorno fijado
 
