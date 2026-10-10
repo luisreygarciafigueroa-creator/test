@@ -1,6 +1,6 @@
 # IOM — formalización, ontología y experimentos empíricos reproducibles
 
-Repositorio ejecutable del marco I.O. El documento de referencia [`docs/MARCOI.O.txt`](docs/MARCOI.O.txt) se conserva íntegro. La especificación operativa de tríadas y vectores está centralizada en [`data/iom_spec.json`](data/iom_spec.json) y transcrita en [`docs/TRIADAS_CATEGORIALES.md`](docs/TRIADAS_CATEGORIALES.md) y [`docs/VECTORES_4_5.md`](docs/VECTORES_4_5.md).
+Repositorio ejecutable del marco I.O. El marco se articula con **cinco perspectivas** (Individualidad, Dualidad, Totalidad, Evolución e Involución). El documento de referencia [`docs/MARCOI.O.txt`](docs/MARCOI.O.txt) se conserva íntegro. La especificación operativa de tríadas y vectores está centralizada en [`data/iom_spec.json`](data/iom_spec.json) y transcrita en [`docs/TRIADAS_CATEGORIALES.md`](docs/TRIADAS_CATEGORIALES.md) y [`docs/VECTORES_4_5.md`](docs/VECTORES_4_5.md).
 
 > El código verifica propiedades formales de la especificación y somete hipótesis estructurales a pruebas empíricas reproducibles (Lean, OWL/SHACL, validación cruzada y baselines).
 
@@ -25,8 +25,8 @@ La CI ejecuta la compilación Lean, genera los artefactos, ejecuta las pruebas, 
 
 ## Contenido verificado
 
+- **Cinco perspectivas:** Individualidad (`Ind`), Dualidad (`D`), Totalidad (`Tot`), Evolución (`Evol`) e Involución (`Invol`). Las tres primeras son posicionales en cada tríada; las dos últimas son vectoriales (cuatro secuencias de cinco pasos).
 - **Especificación canónica:** 13 tríadas de avance, 13 de retroceso; extremo inicial de avance `involución | vacío | evolución`, extremo final de retroceso `evolución | vacío | involución`; etiquetas con acentos y orden fiel a la tabla de referencia.
-- **Perspectivas 4–5:** vectores evolutivo e involutivo con cuatro filas de cinco pasos; secuencias, posiciones y flechas actuales.
 - **Lean 4.9.0:** operadores temporales, espejos de posición, cotas de índices vectoriales y teoremas formales; sin `sorry` ni `admit`.
 - **RDF/OWL + SHACL:** axiomas de clases y propiedades, dominios/rangos, propiedades funcionales/simetría y restricciones SHACL de estructura, espejo, creación y secuencias vectoriales. El validador ejecuta expansión OWL RL y SHACL.
 - **PI-HGAT-T:** clasificador de relaciones `none`/`mirrorOf`/`creates`, PyTorch, semilla fija, validación cruzada leave-one-triad-out y ablaciones sin fase/sin posición. Las métricas se vinculan a las propiedades de la ontología y se reportan de forma completa (por fold, clase y matriz de confusión).

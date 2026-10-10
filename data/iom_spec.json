@@ -3,9 +3,23 @@
   "spec_version": "1.1.0",
   "title": "Especificación IOM canónica",
   "source_date": "2026-10-08",
-  "source_note": "Operacionalización canónica de las tablas de Fase de Avance, Fase de Retroceso y vectores cuarta y quinta. Fuente de datos estructurados para ontología, datasets, pruebas formales y experimentos empíricos reproducibles.",
+  "source_note": "Operacionalización canónica del marco I.O. con cinco perspectivas (Individualidad, Dualidad, Totalidad, Evolución e Involución), tablas de Fase de Avance y Fase de Retroceso, y secuencias vectoriales. Fuente de datos estructurados para ontología, datasets, pruebas formales y experimentos empíricos reproducibles.",
   "positions": ["left", "center", "right"],
   "perspectives": ["Ind", "D", "Tot"],
+  "five_perspectives": [
+    {"id": "Ind", "label": "Individualidad", "index": 1, "kind": "positional", "description": "Modo de actualización: unidad / singularidad del fenómeno."},
+    {"id": "D", "label": "Dualidad", "index": 2, "kind": "positional", "description": "Modo de actualización: relación / diferencia."},
+    {"id": "Tot", "label": "Totalidad", "index": 3, "kind": "positional", "description": "Modo de actualización: integración / sistema."},
+    {"id": "Evol", "label": "Evolución", "index": 4, "kind": "vectorial", "description": "Dirección de flujo: proyección del vacío hacia la estructura."},
+    {"id": "Invol", "label": "Involución", "index": 5, "kind": "vectorial", "description": "Dirección de flujo: disolución de la estructura hacia el vacío."}
+  ],
+  "perspective_labels": {
+    "Ind": "Individualidad",
+    "D": "Dualidad",
+    "Tot": "Totalidad",
+    "Evol": "Evolución",
+    "Invol": "Involución"
+  },
   "phases": {
     "adv": {"label": "Fase de Avance", "direction": "evol"},
     "ret": {"label": "Fase de Retroceso", "direction": "invol"}
