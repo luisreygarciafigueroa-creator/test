@@ -32,7 +32,7 @@ def seed_everything(seed: int) -> None:
 
 
 def features_for_node(node_id: str) -> list[float]:
-    """Codifica sólo la fase y posición, sin etiqueta léxica ni número de tríada."""
+    """Codifica solo la fase y posición, sin etiqueta léxica ni número de tríada."""
     parts = node_id.split("_")
     phase, position = parts[1], int(parts[2][1:])
     return [float(phase == "adv"), float(phase == "ret"),
