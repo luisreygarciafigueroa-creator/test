@@ -1,14 +1,12 @@
-# Trece tríadas categoriales I.O.
+# Tríadas categoriales I.O.
 
-> **Procedencia:** transcripción de las fases de avance y retroceso. `data/iom_spec.json` es la fuente estructurada canónica del generador, los datasets, las pruebas y los experimentos. Las etiquetas se guardan en minúscula por convención de datos, conservando acentos y diferencias literales (por ejemplo, `vacio` en las tríadas extremas y `vacío` en Universo/Espacio).
-
-Las columnas representan izquierda, centro y derecha; en la codificación estructural corresponden a las posiciones 0, 1 y 2 y a los metadatos de perspectiva `Ind`, `D` y `Tot`.
+> **Procedencia:** transcripción operativa de las tablas de Fase de Avance y Fase de Retroceso. Fuente estructurada: [`data/iom_spec.json`](../data/iom_spec.json).
 
 ## Fase de Avance
 
 | Izquierda | Centro | Derecha |
 |---|---|---|
-| involución | vacio | evolución |
+| involución | vacío | evolución |
 | oscuridad | consciencia | luz |
 | descendente | mente | ascendente |
 | lógica | inteligencia | libertad |
@@ -38,7 +36,7 @@ Las columnas representan izquierda, centro y derecha; en la codificación estruc
 | libertad | inteligencia | lógica |
 | ascendente | mente | descendente |
 | luz | consciencia | oscuridad |
-| evolución | vacio | involución |
+| evolución | vacío | involución |
 
 ## Dinámicas de creación y espejos
 
