@@ -1,0 +1,15 @@
+id,kind,source,target,source_label,target_label,context
+NR01,out_of_rules,T00_adv_P0,T00_adv_P1,involución,vacío,"Misma fase (avance), lateral→centro. Las reglas creates exigen fase opuesta."
+NR02,out_of_rules,T00_adv_P0,T00_ret_P0,involución,mundo,Fase opuesta pero lateral→lateral (no lateral→centro ni centro→lateral).
+NR03,out_of_rules,T02_adv_P2,T02_ret_P2,ascendente,memoria,"Fase opuesta, misma posición lateral (right→right). No es espejo ni creates."
+CT01,control_mirror,T00_adv_P0,T00_ret_P2,involución,cuerpo,"Espejo canónico: left↔right, fase opuesta."
+CT02,control_creates,T00_adv_P0,T00_ret_P1,involución,consciente,Creates canónico: lateral avance → centro retroceso.
+CT03,control_mirror,T00_adv_P1,T00_ret_P1,vacío,consciente,Espejo centro↔centro.
+XT01,cross_triad,T00_adv_P0,T01_ret_P2,involución,carácter,Tríadas distintas. Las reglas operativas solo definen mirror/creates intra-tríada.
+XT02,cross_triad,T03_adv_P1,T08_ret_P1,inteligencia,cuántico,Centros de tríadas distintas.
+NC01,new_concept,NEW_adv_P0,NEW_ret_P2,entropía,síntesis,Etiquetas ajenas al vocabulario canónico; estructura posicional análoga a espejo.
+NC02,new_concept,NEW_adv_P1,NEW_ret_P0,ruido,señal,Centro→lateral con conceptos nuevos (análogo creates).
+NC03,new_concept,NEW_adv_P0,NEW_adv_P2,caos,orden,"Misma fase, conceptos nuevos."
+AM01,ambiguous,T06_adv_P2,T06_ret_P0,vacío,vacío,Espejo right↔left con la misma etiqueta léxica 'vacío' en ambos polos.
+AM02,ambiguous,T00_adv_P1,T00_ret_P0,vacío,mundo,Creates centro→lateral; el centro es 'vacío' (etiqueta cargada).
+AM03,ambiguous,T12_ret_P1,T12_adv_P1,vacío,vacío,"Espejo centro-centro, ambos 'vacío', fases opuestas (extremos del ciclo).

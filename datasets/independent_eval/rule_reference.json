@@ -1,0 +1,16 @@
+{
+  "NR01": {"rule_label": "none", "notes": "Caso negativo canónico: misma fase."},
+  "NR02": {"rule_label": "none", "notes": "Posiciones no cubiertas por creation_rules."},
+  "NR03": {"rule_label": "none", "notes": "Misma posición local: las reglas no generan arista."},
+  "CT01": {"rule_label": "mirrorOf", "notes": "Control: debe ser mirrorOf bajo reglas."},
+  "CT02": {"rule_label": "creates", "notes": "Control: debe ser creates bajo reglas."},
+  "CT03": {"rule_label": "mirrorOf", "notes": "Control centro."},
+  "XT01": {"rule_label": "none", "notes": "Independiente del generador de 390 candidatos."},
+  "XT02": {"rule_label": "none", "notes": "Sin regla formal intra-especificación."},
+  "NC01": {"rule_label": "unspecified", "notes": "El anotador decide si proyecta mirrorOf por analogía estructural."},
+  "NC02": {"rule_label": "unspecified", "notes": "Analogía estructural vs. semántica léxica."},
+  "NC03": {"rule_label": "unspecified", "notes": "Sin análogo creates/mirror en reglas."},
+  "AM01": {"rule_label": "mirrorOf", "notes": "Ambigüedad semántica: ¿espejo o identidad conceptual?"},
+  "AM02": {"rule_label": "creates", "notes": "¿El vacío crea el mundo o solo cumple la regla posicional?"},
+  "AM03": {"rule_label": "mirrorOf", "notes": "Doble vacío en extremos: interpretación abierta."}
+}
