@@ -8,18 +8,19 @@
 |---|---|---|
 | Estado temporal y vacío | `State(time, payload)`; `vacuum` | Lean 4.9.0 |
 | Cuatro operadores temporales | `E`, `S_fwd`, `Ivo`, `S_rev` | Teoremas Lean compilados |
-| Posiciones de tríada | izquierda=0/`Ind`; centro=1/`D`; derecha=2/`Tot` | RDF/OWL, SHACL, pruebas y `TriadPosition` Lean |
+| Cinco perspectivas | Individualidad, Dualidad, Totalidad, Evolución, Involución | RDF `io:Perspective`, `five_perspectives` en JSON |
+| Posiciones de tríada (persp. 1–3) | izquierda=0/`Ind`; centro=1/`D`; derecha=2/`Tot` | RDF/OWL, SHACL, pruebas y `TriadPosition` Lean |
 | Avance/retroceso actualizados | 13 filas por fase; 78 nodos | CSV, RDF, SHACL, pruebas literales |
 | Extremos actualizados | avance comienza `involución | vacío | evolución`; retroceso termina `evolución | vacío | involución` | Fuente JSON, RDF y pruebas |
 | Espejos laterales | misma fila, fase opuesta, `pos_ret = 2 - pos_adv` | OWL `mirrorOf` simétrica, SHACL y Lean |
 | Dinámicas `creates` | cuatro reglas, 8 aristas por fila = 104 | Generador, SHACL y comparación exacta |
-| Perspectivas vectoriales 4–5 | cuatro secuencias de 5 pasos = 20 | RDF, SHACL semántico y pruebas |
+| Perspectivas 4–5 (Evolución, Involución) | cuatro secuencias de 5 pasos = 20 | RDF, SHACL semántico y pruebas |
 | Axiomas de ontología | clases, dominios, rangos, simetría y funcionalidad | Aserciones OWL más expansión OWL RL |
 | PI-HGAT-T | clasificación de relación estructural en 13 folds | JSON de métricas, logs, configuración y CI |
 
 ## Decisiones de transcripción
 
-- Se usa la tabla de referencia canónica. La tríada `individualidad | dualidad | totalidad` que formaba la primera fila de una versión anterior deja de ser una etiqueta de las 13 filas categoriales; `Ind`, `D`, `Tot` permanecen como metadatos posicionales de perspectiva, distintos del rótulo categorial.
+- Las **cinco perspectivas** del marco son Individualidad, Dualidad, Totalidad, Evolución e Involución. `Ind`, `D` y `Tot` son metadatos posicionales de las tres primeras; `Evol` e `Invol` son las perspectivas vectoriales. No se confunden con las etiquetas categoriales de las 13 filas de cada fase.
 - Los rótulos se guardan en minúscula con ortografía canónica del español (incluidos acentos). La etiqueta `vacío` unifica las apariciones en extremos y en la fila Universo/Espacio.
 - Los vectores de retroceso se actualizan a `evol · tot · dua · ind · vacío` y `vacío · ind · dua · tot · invol`. La orientación visible y el índice del eje son campos diferentes.
 - El archivo de referencia `docs/MARCOI.O.txt` se conserva; las tablas operativas se documentan en `data/iom_spec.json` (`spec_version` 1.1.0).
