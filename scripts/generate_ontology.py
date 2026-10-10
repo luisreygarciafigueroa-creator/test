@@ -77,7 +77,12 @@ for pos in ("left", "center", "right"):
 for direction in ("evol", "invol"):
     g.add((IO[direction], RDF.type, OWL.NamedIndividual))
     g.add((IO[direction], RDF.type, IO.Direction))
-for name, label in (("Ind", "Individualidad"), ("D", "Dualidad"), ("Tot", "Totalidad"), ("Evol", "Vector Evolutivo"), ("Invol", "Vector Involutivo")):
+# Cinco perspectivas canónicas: Individualidad, Dualidad, Totalidad, Evolución e Involución.
+_perspective_labels = SPEC.get("perspective_labels") or {
+    "Ind": "Individualidad", "D": "Dualidad", "Tot": "Totalidad",
+    "Evol": "Evolución", "Invol": "Involución",
+}
+for name, label in _perspective_labels.items():
     g.add((IO[name], RDF.type, IO.Perspective))
     g.add((IO[name], RDFS.label, Literal(label, lang="es")))
 
