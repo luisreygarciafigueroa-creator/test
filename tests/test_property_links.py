@@ -36,12 +36,14 @@ class PropertyLinksTests(unittest.TestCase):
         self.assertIn("schema_version", self.spec)
 
     def test_node_count_matches_spec(self):
+        # 13 tríadas × 2 fases × 3 posiciones = 78
         expected = self.n_triads * 2 * 3
         self.assertEqual(len(self.nodes), expected)
         indices = {int(r["triad_index"]) for r in self.nodes}
         self.assertEqual(indices, set(range(self.n_triads)))
 
     def test_relation_candidate_count(self):
+        # 13 × 6 × 5 = 390 pares dirigidos no reflexivos
         expected = self.n_triads * 6 * 5
         self.assertEqual(len(self.relations), expected)
 
@@ -49,15 +51,19 @@ class PropertyLinksTests(unittest.TestCase):
         counts = {"none": 0, "mirrorOf": 0, "creates": 0}
         for row in self.relations:
             counts[row["relation"]] += 1
+        # mirrorOf: 13 tríadas × 6 nodos / 2 (simétrico) * 2 direcciones?
+        # Según EXPERIMENTOS: 78 mirrorOf, 104 creates, 208 none
         self.assertEqual(counts["mirrorOf"], 78)
         self.assertEqual(counts["creates"], 104)
         self.assertEqual(counts["none"], 208)
 
     def test_mirrorOf_property_holds_in_csv(self):
+        """Cada arista mirrorOf respeta: misma tríada, fase opuesta, posición reflejada."""
         for row in self.relations:
             if row["relation"] != "mirrorOf":
                 continue
             src, tgt = row["source"], row["target"]
+            # node_id formato T{ii}_{phase}_P{pos}
             s_parts = src.split("_")
             t_parts = tgt.split("_")
             self.assertEqual(s_parts[0], t_parts[0], "misma tríada")
@@ -67,6 +73,7 @@ class PropertyLinksTests(unittest.TestCase):
             self.assertEqual(t_pos, 2 - s_pos, "posición reflejada")
 
     def test_creates_property_holds_in_csv(self):
+        """Cada arista creates respeta las cuatro reglas de creation_rules."""
         rules = self.spec["creation_rules"]
         allowed = set()
         for rule in rules:
@@ -82,9 +89,11 @@ class PropertyLinksTests(unittest.TestCase):
             self.assertIn(key, allowed, f"creates no permitido: {row['source']} -> {row['target']}")
 
     def test_vector_steps_count(self):
+        # 4 vectores × 5 pasos = 20
         self.assertEqual(len(self.vectors), 20)
 
     def test_lean_operators_file_exists_and_mentions_mirror(self):
+        """El código Lean debe existir y referenciar los operadores de espejo."""
         lean_spec = (ROOT / "IOM" / "Specification.lean").read_text(encoding="utf-8")
         self.assertIn("mirror", lean_spec.lower())
         self.assertIn("TriadPosition", lean_spec)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera reporte de auditoría que relaciona commit, hashes de datos,
+"""Genera informe de auditoría que relaciona commit, hashes de datos,
 versiones de dependencias y métricas experimentales."""
 from __future__ import annotations
 
@@ -38,8 +38,15 @@ def git_info() -> dict:
     }
 
 
-def collect_hashes() -> dict:
-    paths = [
+def load_json(rel: str):
+    path = ROOT / rel
+    if not path.is_file():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def main() -> None:
+    data_files = [
         "data/iom_spec.json",
         "data/iom_spec.schema.json",
         "datasets/triad_nodes.csv",
@@ -50,26 +57,12 @@ def collect_hashes() -> dict:
         "requirements-lock.txt",
         "experiments/config.json",
     ]
-    result = {}
-    for rel in paths:
-        p = ROOT / rel
-        if p.exists():
-            result[rel] = sha256_file(p)
-        else:
-            result[rel] = None
-    return result
+    hashes = {}
+    for rel in data_files:
+        path = ROOT / rel
+        hashes[rel] = sha256_file(path) if path.is_file() else None
 
-
-def load_json(rel: str):
-    p = ROOT / rel
-    if not p.exists():
-        return None
-    return json.loads(p.read_text(encoding="utf-8"))
-
-
-def main() -> None:
     git = git_info()
-    hashes = collect_hashes()
     spec = load_json("data/iom_spec.json") or {}
     metrics = load_json("experiments/results/pi_hgat_t_metrics.json")
     baselines = load_json("experiments/results/baselines_comparison.json")
@@ -89,7 +82,7 @@ def main() -> None:
         "software_versions_file": versions,
         "primary_metrics": (metrics or {}).get("primary_metrics"),
         "baselines_summary": None,
-        "manifest_present": (ROOT / "MANIFEST.sha256").exists(),
+        "manifest_present": (ROOT / "MANIFEST.sha256").is_file(),
     }
 
     if baselines:

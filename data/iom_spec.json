@@ -65,7 +65,7 @@
     {
       "from_version": "1.0.0",
       "to_version": "1.1.0",
-      "description": "Añade spec_version, schema_version formal y bloque migrations. Sin cambios semánticos en triadas ni reglas.",
+      "description": "Añade spec_version, schema_version formal y bloque migrations. Sin cambios semánticos en tríadas ni reglas.",
       "date": "2026-10-08"
     }
   ]
