@@ -4,4 +4,4 @@ seed=20261008 folds=13 epochs=100 candidates=390
 PI-HGAT-T_full_phase_and_position: accuracy=1.000000 macro_f1=1.000000 mirrorOf_f1=1.000000 creates_f1=1.000000 rule_conformance=1.000000
 ablation_without_phase: accuracy=0.600000 macro_f1=0.605556 mirrorOf_f1=0.750000 creates_f1=0.666667 rule_conformance=0.538462
 ablation_without_position: accuracy=0.635897 macro_f1=0.577065 mirrorOf_f1=0.387097 creates_f1=0.486957 rule_conformance=0.393162
-runtime_seconds=14.993
+runtime_seconds=25.216
