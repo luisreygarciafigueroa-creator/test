@@ -1,0 +1,27 @@
+{
+  "title": "Protocolo de anotación independiente (ciego)",
+  "version": "1.0.0",
+  "purpose": "Estudiar la interpretación humana de relaciones estructurales del marco I.O. sobre pares que incluyen controles canónicos, casos fuera de las cuatro reglas, conceptos nuevos y casos ambiguos. No mide recuperación de reglas por un modelo entrenado.",
+  "blinding": [
+    "Los anotadores no reciben rule_label ni consensus previo.",
+    "No se muestra experiments/results ni relation_candidates gold.",
+    "Solo ven: id, source/target (o etiquetas), context y las definiciones de RELACIONES_OPERATIVAS.md sin ejemplos resueltos del ítem."
+  ],
+  "labels": ["none", "mirrorOf", "creates", "unsure"],
+  "instructions": [
+    "Leer docs/RELACIONES_OPERATIVAS.md (secciones de definición, no las tablas de ejemplos del ítem).",
+    "Para cada par, asignar exactamente una etiqueta de labels.",
+    "Usar 'unsure' cuando la definición no baste (conceptos nuevos o ambigüedad).",
+    "No consultar a otros anotadores hasta cerrar la ronda.",
+    "Registrar en free_text una justificación breve (≤2 frases)."
+  ],
+  "recruitment": "≥3 anotadores independientes, sin participación en la generación del gold JSON.",
+  "metrics_to_publish": [
+    "acuerdo por par (mayoría / unánime)",
+    "Fleiss' kappa global y por kind",
+    "tabla de desacuerdos ítem a ítem",
+    "coincidencia con rule_reference (solo post-hoc, no es objetivo primario)",
+    "tasa de 'unsure' por kind"
+  ],
+  "note": "Los ítems detallados están en independent_pairs.csv; rule_label solo en rule_reference.json (oculto a anotadores)."
+}

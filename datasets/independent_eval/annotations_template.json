@@ -1,0 +1,29 @@
+{
+  "description": "Plantilla de anotaciones ciegas. Rellenar tras el protocolo PROTOCOL.json.",
+  "annotators": ["A1", "A2", "A3"],
+  "status": "pending_human_collection",
+  "items": [
+    {"id": "NR01", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}},
+    {"id": "NR02", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}},
+    {"id": "NR03", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}},
+    {"id": "CT01", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}},
+    {"id": "CT02", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}},
+    {"id": "CT03", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}},
+    {"id": "XT01", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}},
+    {"id": "XT02", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}},
+    {"id": "NC01", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}},
+    {"id": "NC02", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}},
+    {"id": "NC03", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}},
+    {"id": "AM01", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}},
+    {"id": "AM02", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}},
+    {"id": "AM03", "annotations": {"A1": null, "A2": null, "A3": null}, "free_text": {"A1": "", "A2": "", "A3": ""}}
+  ],
+  "disagreements": [],
+  "metrics": {
+    "fleiss_kappa": null,
+    "unanimous_fraction": null,
+    "unsure_rate_by_kind": {},
+    "posthoc_agreement_with_rules": null,
+    "note": "Se publicarán tras la recolección con anotadores humanos independientes."
+  }
+}
