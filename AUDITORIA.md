@@ -10,7 +10,7 @@
 | Cuatro operadores temporales | `E`, `S_fwd`, `Ivo`, `S_rev` | Teoremas Lean compilados |
 | Posiciones de tríada | izquierda=0/`Ind`; centro=1/`D`; derecha=2/`Tot` | RDF/OWL, SHACL, pruebas y `TriadPosition` Lean |
 | Avance/retroceso actualizados | 13 filas por fase; 78 nodos | CSV, RDF, SHACL, pruebas literales |
-| Extremos actualizados | avance comienza `involución | vacio | evolución`; retroceso termina `evolución | vacio | involución` | Fuente JSON, RDF y pruebas |
+| Extremos actualizados | avance comienza `involución | vacío | evolución`; retroceso termina `evolución | vacío | involución` | Fuente JSON, RDF y pruebas |
 | Espejos laterales | misma fila, fase opuesta, `pos_ret = 2 - pos_adv` | OWL `mirrorOf` simétrica, SHACL y Lean |
 | Dinámicas `creates` | cuatro reglas, 8 aristas por fila = 104 | Generador, SHACL y comparación exacta |
 | Perspectivas vectoriales 4–5 | cuatro secuencias de 5 pasos = 20 | RDF, SHACL semántico y pruebas |
@@ -20,8 +20,8 @@
 ## Decisiones de transcripción
 
 - Se usa la tabla de referencia canónica. La tríada `individualidad | dualidad | totalidad` que formaba la primera fila de una versión anterior deja de ser una etiqueta de las 13 filas categoriales; `Ind`, `D`, `Tot` permanecen como metadatos posicionales de perspectiva, distintos del rótulo categorial.
-- Se conserva la diferencia literal entre `vacio` (fila extrema de evolución/involución) y `vacío` (fila Universo/Espacio y otras filas). Los rótulos se guardan en minúscula, manteniendo los acentos.
-- Los vectores de retroceso se actualizan a `evol · tot · dua · ind · vacio` y `vacio · ind · dua · tot · invol`. La orientación visible y el índice del eje son campos diferentes.
+- Los rótulos se guardan en minúscula con ortografía canónica del español (incluidos acentos). La etiqueta `vacío` unifica las apariciones en extremos y en la fila Universo/Espacio.
+- Los vectores de retroceso se actualizan a `evol · tot · dua · ind · vacío` y `vacío · ind · dua · tot · invol`. La orientación visible y el índice del eje son campos diferentes.
 - El archivo de referencia `docs/MARCOI.O.txt` se conserva; las tablas operativas se documentan en `data/iom_spec.json` (`spec_version` 1.1.0).
 
 ## Métricas y verificación empírica
