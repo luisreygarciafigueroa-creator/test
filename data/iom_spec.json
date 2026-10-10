@@ -12,7 +12,7 @@
   },
   "triads": {
     "adv": [
-      ["involución", "vacio", "evolución"],
+      ["involución", "vacío", "evolución"],
       ["oscuridad", "consciencia", "luz"],
       ["descendente", "mente", "ascendente"],
       ["lógica", "inteligencia", "libertad"],
@@ -39,14 +39,14 @@
       ["libertad", "inteligencia", "lógica"],
       ["ascendente", "mente", "descendente"],
       ["luz", "consciencia", "oscuridad"],
-      ["evolución", "vacio", "involución"]
+      ["evolución", "vacío", "involución"]
     ]
   },
   "vectors": [
-    {"name": "Evol", "phase": "adv", "labels": ["vacio", "ind", "dua", "tot", "evol"], "axis_positions": [0, 1, 2, 3, 4], "arrow": "\u2192"},
-    {"name": "Evol", "phase": "ret", "labels": ["evol", "tot", "dua", "ind", "vacio"], "axis_positions": [4, 3, 2, 1, 0], "arrow": "\u2190"},
-    {"name": "Invol", "phase": "adv", "labels": ["invol", "tot", "dua", "ind", "vacio"], "axis_positions": [4, 3, 2, 1, 0], "arrow": "\u2192"},
-    {"name": "Invol", "phase": "ret", "labels": ["vacio", "ind", "dua", "tot", "invol"], "axis_positions": [0, 1, 2, 3, 4], "arrow": "\u2190"}
+    {"name": "Evol", "phase": "adv", "labels": ["vacío", "ind", "dua", "tot", "evol"], "axis_positions": [0, 1, 2, 3, 4], "arrow": "→"},
+    {"name": "Evol", "phase": "ret", "labels": ["evol", "tot", "dua", "ind", "vacío"], "axis_positions": [4, 3, 2, 1, 0], "arrow": "←"},
+    {"name": "Invol", "phase": "adv", "labels": ["invol", "tot", "dua", "ind", "vacío"], "axis_positions": [4, 3, 2, 1, 0], "arrow": "→"},
+    {"name": "Invol", "phase": "ret", "labels": ["vacío", "ind", "dua", "tot", "invol"], "axis_positions": [0, 1, 2, 3, 4], "arrow": "←"}
   ],
   "creation_rules": [
     {"source_phase": "adv", "source_positions": [0, 2], "target_phase": "ret", "target_positions": [1]},

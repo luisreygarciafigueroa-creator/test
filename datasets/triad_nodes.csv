@@ -1,6 +1,6 @@
 node_id,triad_index,phase,direction,position_index,position,perspective,label
 T00_adv_P0,0,adv,evol,0,left,Ind,involución
-T00_adv_P1,0,adv,evol,1,center,D,vacio
+T00_adv_P1,0,adv,evol,1,center,D,vacío
 T00_adv_P2,0,adv,evol,2,right,Tot,evolución
 T01_adv_P0,1,adv,evol,0,left,Ind,oscuridad
 T01_adv_P1,1,adv,evol,1,center,D,consciencia
@@ -75,5 +75,5 @@ T11_ret_P0,11,ret,invol,0,left,Ind,luz
 T11_ret_P1,11,ret,invol,1,center,D,consciencia
 T11_ret_P2,11,ret,invol,2,right,Tot,oscuridad
 T12_ret_P0,12,ret,invol,0,left,Ind,evolución
-T12_ret_P1,12,ret,invol,1,center,D,vacio
+T12_ret_P1,12,ret,invol,1,center,D,vacío
 T12_ret_P2,12,ret,invol,2,right,Tot,involución
