@@ -2,7 +2,9 @@
 
 ## Alcance y procedencia
 
-Este informe describe un marco verificable de extremo a extremo. El documento de referencia se conserva en [`docs/MARCOI.O.txt`](docs/MARCOI.O.txt); la especificación operativa canónica se registra en [`data/iom_spec.json`](data/iom_spec.json). Las hipótesis estructurales del marco se someten a pruebas formales (Lean, OWL/SHACL) y a evaluación empírica reproducible (validación cruzada, ablaciones, baselines y conjunto externo).
+Este informe describe un marco verificable de extremo a extremo. El documento de referencia se conserva en [`docs/MARCOI.O.txt`](docs/MARCOI.O.txt); la especificación operativa canónica se registra en [`data/iom_spec.json`](data/iom_spec.json). Las afirmaciones del marco sobre **vacío**, **unidad informativa**, **infinito** y **transformación**, separadas en premisas asumidas y teoremas derivados, constan en [`docs/PREMISAS_Y_TEOREMAS.md`](docs/PREMISAS_Y_TEOREMAS.md). La formalización Lean de espejos, creates y vectores está en `IOM/FormalRules.lean`.
+
+Las hipótesis estructurales del marco se someten a pruebas formales (Lean, OWL/SHACL) y a evaluación de **recuperación de relaciones generadas por reglas** (validación cruzada, ablaciones, baselines). La interpretación humana independiente se estudia en `datasets/independent_eval/`.
 
 ## Especificación categorial actualizada
 
@@ -27,23 +29,19 @@ RDF conserva por separado el índice visual, el eje, la etiqueta y la flecha. So
 
 ## Formalización Lean
 
-`IOM/Core.lean` define el estado `State(time : Int, payload : List String)`, el vacío, deduplicación e inversión. `IOM/Operators.lean` define `E`, `S_fwd`, `Ivo` y `S_rev`, junto con teoremas de composición y del punto fijo estricto del vacío. `IOM/Specification.lean` formaliza posiciones, espejo involutivo, inversión de índice y cotas 0–4. La construcción se compila con Lean 4.9.0 sin `sorry` ni `admit`.
-
-Las pruebas Lean verifican los tipos, operadores y propiedades de posición/espejo que el resto de la cadena empírica asume.
+`IOM/Core.lean` define el estado `State(time : Int, payload : List String)`, el vacío, deduplicación e inversión. `IOM/Operators.lean` define `E`, `S_fwd`, `Ivo` y `S_rev`, junto con teoremas de composición y del punto fijo estricto del vacío. `IOM/Specification.lean` formaliza posiciones, espejo involutivo, inversión de índice y cotas 0–4. `IOM/FormalRules.lean` codifica los predicados `isMirror` e `isCreates` y los conteos canónicos; las relaciones del CSV se comprueban contra esos predicados (`tests/test_formal_rules_bridge.py`). La construcción se compila con Lean 4.9.0 sin `sorry` ni `admit`.
 
 ## Ontología y restricciones
 
 `scripts/generate_ontology.py` consume la especificación JSON y genera `ontology/io_ontology.ttl` más tres CSV. El grafo declara vocabulario OWL: clases, propiedades de objeto y de datos, dominios, rangos, propiedades funcionales y simetría de `io:mirrorOf`. `scripts/validate_shacl.py` verifica axiomas esperados, ejecuta expansión OWL RL y evalúa `ontology/io_shapes.ttl`.
 
-SHACL restringe cardinalidad, valores permitidos, fase-dirección, posición-perspectiva, espejo recíproco, `creates` y las cuatro secuencias vectoriales. Las pruebas negativas alteran enlaces/datos para verificar que las formas detectan incompatibilidades.
+## Experimento PI-HGAT-T (recuperación de relaciones por reglas)
 
-## Experimento PI-HGAT-T
+Se implementa *Perspective-Informed Heterogeneous Graph Attention Network for Triads*. Un codificador con atención multi-cabeza consume atributos de fase y posición; un decodificador predice `none`, `mirrorOf` o `creates`. No usa el rótulo textual ni el índice de tríada.
 
-Se implementa la definición operacional de referencia del repositorio: *Perspective-Informed Heterogeneous Graph Attention Network for Triads*. Un codificador con atención multi-cabeza consume atributos de fase y posición de los seis nodos de cada par de filas; un decodificador predice relaciones dirigidas `none`, `mirrorOf` o `creates`. No usa el rótulo textual ni el índice de tríada.
+Los 390 candidatos derivados de las 13 filas se evalúan con 13 particiones leave-one-triad-out. Se ejecutan tres variantes: atributos completos, ablación sin fase y ablación sin posición.
 
-Los 390 candidatos derivados de las 13 filas se evalúan con 13 particiones leave-one-triad-out. Se ejecutan tres variantes: atributos completos, ablación sin fase y ablación sin posición. Los datasets tienen 78 nodos, 78 aristas dirigidas de espejo, 104 aristas dirigidas `creates` y 208 pares sin relación.
-
-Las métricas se atan explícitamente a las propiedades ontológicas: F1 de `mirrorOf` evalúa inversión lateral y reciprocidad; F1 de `creates` evalúa las cuatro reglas; la conformidad semántica de aristas predichas mide su admisibilidad bajo las reglas que SHACL define.
+Las métricas miden la **recuperación de relaciones estructurales generadas por reglas**: F1 de `mirrorOf` y `creates` respecto al gold determinista; no se interpretan como validación empírica del marco sobre datos independientes del generador.
 
 ### Resultados numéricos finales (leave-one-triad-out, semilla 20261008)
 
@@ -80,10 +78,12 @@ Las métricas se atan explícitamente a las propiedades ontológicas: F1 de `mir
 | Regresión logística | 0.5333 | 0.2424 | 0.0000 | 0.0000 |
 | PI-HGAT-T (referencia) | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
 
-La puntuación perfecta del modelo completo y del oracle SHACL confirma la recuperabilidad determinista de `io:mirrorOf` y `io:creates` a partir de fase y posición. Las ablaciones cuantifican el aporte de cada factor. Detalle completo (matrices por ablación, per-class, folds) en [`EXPERIMENTOS.md`](EXPERIMENTOS.md) y en `experiments/results/pi_hgat_t_metrics.json` / `baselines_comparison.json`.
+La puntuación perfecta del modelo completo y del oracle SHACL confirma la **recuperación de relaciones estructurales generadas por reglas** (`io:mirrorOf` y `io:creates`) a partir de fase y posición bajo leave-one-triad-out. Estas cifras **no** constituyen por sí solas una validación empírica del marco sobre datos del mundo real; para interpretación humana independiente véase `datasets/independent_eval/`.
+
+## Evaluación independiente
+
+`datasets/independent_eval/` define pares fuera de las cuatro reglas, conceptos nuevos y casos ambiguos, con protocolo de anotación **ciega** por anotadores humanos independientes y publicación de desacuerdos y métricas de acuerdo.
 
 ## Reproducción y verificación
 
-Sigue [`REPRODUCCION.md`](REPRODUCCION.md). La CI compila Lean, regenera los artefactos, ejecuta las pruebas, valida OWL RL/SHACL, ejecuta PI-HGAT-T, compara baselines y genera la auditoría automática.
-
-El corpus operativo codifica las reglas del marco de forma estructurada. La cadena Lean + OWL/SHACL + experimentos + baselines + evaluación externa permite comprobar de forma reproducible la consistencia formal y el desempeño empírico estructural del sistema.
+Sigue [`REPRODUCCION.md`](REPRODUCCION.md). La CI compila Lean, regenera los artefactos, ejecuta las pruebas (incluido el puente formal), valida OWL RL/SHACL, ejecuta PI-HGAT-T, compara baselines y genera la auditoría automática.
