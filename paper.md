@@ -1,4 +1,4 @@
-# IOM — formalización, ontología y experimento computacional reproducible
+# IOM — formalización, ontología y experimentos computacionales reproducibles
 
 ## Alcance y procedencia
 
@@ -6,11 +6,11 @@ Este informe describe un marco verificable de extremo a extremo. El documento de
 
 ## Especificación categorial actualizada
 
-La fuente canónica define trece tríadas por fase. Avance comienza con `involución | vacio | evolución`; retroceso termina con `evolución | vacio | involución`. Las otras doce filas de cada fase conservan el orden y las etiquetas de la tabla de referencia. Cada concepto se representa como `io:OntoNode` con índices de fila, fase, posición, perspectiva posicional, dirección y etiqueta.
+La fuente canónica define trece tríadas por fase. La fase de avance comienza con `involución | vacio | evolución`; la fase de retroceso termina con `evolución | vacio | involución`. Las otras doce filas de cada fase conservan el orden y las etiquetas de la tabla de referencia. Cada concepto se representa como `io:OntoNode` con índices de fila, fase, posición, perspectiva posicional, dirección y etiqueta.
 
 Las columnas corresponden a izquierda/centro/derecha y a metadatos `Ind`/`D`/`Tot`. Esos nombres de perspectiva no sustituyen las etiquetas de las filas categoriales.
 
-Las cuatro reglas de creación generan 104 aristas `io:creates`; los espejos entre fases son recíprocos y cambian izquierda/derecha, preservando centro. Hay 78 nodos de tríada.
+Las cuatro reglas de creación generan 104 aristas `io:creates`; los espejos entre fases son recíprocos y cambian izquierda/derecha, preservando centro. Hay 78 nodos de tríadas (13 × 2 fases × 3 posiciones).
 
 ## Perspectivas vectoriales cuarta y quinta
 
@@ -84,6 +84,6 @@ La puntuación perfecta del modelo completo y del oracle SHACL confirma la recup
 
 ## Reproducción y verificación
 
-Sigue [`REPRODUCCION.md`](REPRODUCCION.md). La CI compila Lean, regenera los artefactos, ejecuta pruebas, valida OWL RL/SHACL, corre PI-HGAT-T, compara baselines y genera la auditoría automática.
+Sigue [`REPRODUCCION.md`](REPRODUCCION.md). La CI compila Lean, regenera los artefactos, ejecuta las pruebas, valida OWL RL/SHACL, ejecuta PI-HGAT-T, compara baselines y genera la auditoría automática.
 
 El corpus operativo codifica las reglas del marco de forma estructurada. La cadena Lean + OWL/SHACL + experimentos + baselines + evaluación externa permite comprobar de forma reproducible la consistencia formal y el desempeño empírico estructural del sistema.
