@@ -14,7 +14,7 @@ La suite compara tres variantes con la misma partición y semilla: modelo comple
 - `datasets/triad_nodes.csv`: 78 nodos (13 tríadas × 2 fases × 3 posiciones).
 - `datasets/relation_candidates.csv`: 390 pares dirigidos no reflexivos (13 × 6 × 5), etiquetados desde las reglas declaradas: 78 `mirrorOf`, 104 `creates`, 208 `none`.
 - `datasets/vector_steps.csv`: 20 pasos, cuatro secuencias de cinco posiciones.
-- Validación **leave-one-triad-out** en 13 pliegues: ninguna pareja de una tríada de prueba aparece en entrenamiento.
+- Validación **leave-one-triad-out** en 13 folds: ninguna pareja de una tríada de prueba aparece en entrenamiento.
 
 Los datos constituyen el corpus empírico de evaluación estructural del marco. Los experimentos miden, de forma reproducible, la capacidad del modelo y de los baselines para recuperar las relaciones predichas por la ontología bajo partición rigurosa.
 
@@ -32,7 +32,7 @@ El criterio de referencia es la reconstrucción exacta de las relaciones ontoló
 
 ## Reproducción y artefactos
 
-Desde la raíz, `python experiments/pi_hgat_t.py` lee los CSV y [`experiments/config.json`](experiments/config.json), fija semilla, ejecuta 39 entrenamientos deterministas en CPU (3 variantes × 13 pliegues) y escribe:
+Desde la raíz, `python experiments/pi_hgat_t.py` lee los CSV y [`experiments/config.json`](experiments/config.json), fija semilla, ejecuta 39 entrenamientos deterministas en CPU (3 variantes × 13 folds) y escribe:
 
 - `experiments/results/pi_hgat_t_metrics.json`: métricas, folds, matriz de confusión, configuración y versiones;
 - `experiments/logs/pi_hgat_t.log`: resumen de ejecución.
