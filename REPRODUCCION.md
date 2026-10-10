@@ -41,7 +41,7 @@ La generación toma `data/iom_spec.json` como fuente única y actualiza `ontolog
 
 1. `lake build` compila los cuatro operadores y los teoremas de posiciones/espejos/vectores sin `sorry` ni `admit`.
 2. El generador produce 78 nodos, 104 aristas `creates`, 78 aristas dirigidas de espejo, 20 pasos vectoriales y 390 candidatos de relación.
-3. Las pruebas comparan literalmente las 26 filas de tríadas y las cuatro secuencias vectoriales; incluyen mutaciones negativas.
+3. Las pruebas comparan literalmente las 26 filas de tríadas (13 de avance y 13 de retroceso) y las cuatro secuencias vectoriales; incluyen mutaciones negativas.
 4. OWL RL infiere tipos por dominios/rangos y SHACL valida reglas, cardinalidades, direcciones, espejos, enlaces y secuencias vectoriales.
 5. La suite ejecuta PI-HGAT-T completo y ablaciones sin fase/sin posición, con 13 folds leave-one-triad-out cada una. Las métricas se vinculan a propiedades ontológicas y se reportan de forma completa (por fold, clase, matriz de confusión y variabilidad).
 6. Los baselines (reglas deterministas, regresión logística, MLP) se evalúan bajo la misma partición para comparación empírica controlada.

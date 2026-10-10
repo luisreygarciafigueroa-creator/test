@@ -21,7 +21,7 @@ lake build
 .venv/bin/python scripts/generate_audit_report.py
 ```
 
-La CI ejecuta la compilación Lean, genera los artefactos, corre pruebas, valida OWL RL/SHACL, reproduce PI-HGAT-T, compara baselines y genera el informe de auditoría.
+La CI ejecuta la compilación Lean, genera los artefactos, ejecuta las pruebas, valida OWL RL/SHACL, reproduce PI-HGAT-T, compara baselines y genera el informe de auditoría.
 
 ## Contenido verificado
 
