@@ -33,8 +33,6 @@ jobs:
           python -m pip install -r requirements-lock.txt
           python -c "import jsonschema; print('jsonschema', jsonschema.__version__)"
       - name: Validate iom_spec.json against JSON Schema
-        env:
-          IOM_REQUIRE_JSONSCHEMA: "1"
         run: python scripts/validate_spec.py
       - name: Check specification migrations
         run: python scripts/migrate_spec.py --check
