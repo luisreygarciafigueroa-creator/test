@@ -6,7 +6,7 @@ Este informe describe un marco verificable de extremo a extremo. El documento de
 
 ## Especificación categorial actualizada
 
-La fuente canónica define trece tríadas por fase. La fase de avance comienza con `involución | vacio | evolución`; la fase de retroceso termina con `evolución | vacio | involución`. Las otras doce filas de cada fase conservan el orden y las etiquetas de la tabla de referencia. Cada concepto se representa como `io:OntoNode` con índices de fila, fase, posición, perspectiva posicional, dirección y etiqueta.
+La fuente canónica define trece tríadas por fase. La fase de avance comienza con `involución | vacío | evolución`; la fase de retroceso termina con `evolución | vacío | involución`. Las otras doce filas de cada fase conservan el orden y las etiquetas de la tabla de referencia. Cada concepto se representa como `io:OntoNode` con índices de fila, fase, posición, perspectiva posicional, dirección y etiqueta.
 
 Las columnas corresponden a izquierda/centro/derecha y a metadatos `Ind`/`D`/`Tot`. Esos nombres de perspectiva no sustituyen las etiquetas de las filas categoriales.
 
@@ -18,10 +18,10 @@ Las secuencias vigentes son:
 
 | Vector | Fase | Etiquetas (izquierda a derecha) | Eje | Flecha |
 |---|---|---|---|---|
-| Evolutivo | Avance | vacio · ind · dua · tot · evol | 0 · 1 · 2 · 3 · 4 | → |
-| Evolutivo | Retroceso | evol · tot · dua · ind · vacio | 4 · 3 · 2 · 1 · 0 | ← |
-| Involutivo | Avance | invol · tot · dua · ind · vacio | 4 · 3 · 2 · 1 · 0 | → |
-| Involutivo | Retroceso | vacio · ind · dua · tot · invol | 0 · 1 · 2 · 3 · 4 | ← |
+| Evolutivo | Avance | vacío · ind · dua · tot · evol | 0 · 1 · 2 · 3 · 4 | → |
+| Evolutivo | Retroceso | evol · tot · dua · ind · vacío | 4 · 3 · 2 · 1 · 0 | ← |
+| Involutivo | Avance | invol · tot · dua · ind · vacío | 4 · 3 · 2 · 1 · 0 | → |
+| Involutivo | Retroceso | vacío · ind · dua · tot · invol | 0 · 1 · 2 · 3 · 4 | ← |
 
 RDF conserva por separado el índice visual, el eje, la etiqueta y la flecha. Son 20 pasos en total.
 
