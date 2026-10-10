@@ -88,19 +88,19 @@ io:VectorStepShape a sh:NodeShape ;
                 FILTER (
                   (?vector = io:Evol && ?phase = "adv" &&
                     (?axis != ?step || ?arrow != "→" ||
-                     !((?axis = 0 && ?text = "vacio") || (?axis = 1 && ?text = "ind") ||
+                     !((?axis = 0 && ?text = "vacío") || (?axis = 1 && ?text = "ind") ||
                        (?axis = 2 && ?text = "dua") || (?axis = 3 && ?text = "tot") || (?axis = 4 && ?text = "evol")))) ||
                   (?vector = io:Evol && ?phase = "ret" &&
                     (?axis != 4 - ?step || ?arrow != "←" ||
-                     !((?axis = 0 && ?text = "vacio") || (?axis = 1 && ?text = "ind") ||
+                     !((?axis = 0 && ?text = "vacío") || (?axis = 1 && ?text = "ind") ||
                        (?axis = 2 && ?text = "dua") || (?axis = 3 && ?text = "tot") || (?axis = 4 && ?text = "evol")))) ||
                   (?vector = io:Invol && ?phase = "adv" &&
                     (?axis != 4 - ?step || ?arrow != "→" ||
-                     !((?axis = 0 && ?text = "vacio") || (?axis = 1 && ?text = "ind") ||
+                     !((?axis = 0 && ?text = "vacío") || (?axis = 1 && ?text = "ind") ||
                        (?axis = 2 && ?text = "dua") || (?axis = 3 && ?text = "tot") || (?axis = 4 && ?text = "invol")))) ||
                   (?vector = io:Invol && ?phase = "ret" &&
                     (?axis != ?step || ?arrow != "←" ||
-                     !((?axis = 0 && ?text = "vacio") || (?axis = 1 && ?text = "ind") ||
+                     !((?axis = 0 && ?text = "vacío") || (?axis = 1 && ?text = "ind") ||
                        (?axis = 2 && ?text = "dua") || (?axis = 3 && ?text = "tot") || (?axis = 4 && ?text = "invol"))))
                 )
             }
