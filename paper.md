@@ -8,20 +8,20 @@ Este informe describe un marco verificable de extremo a extremo. El documento de
 
 La fuente canónica define trece tríadas por fase. La fase de avance comienza con `involución | vacío | evolución`; la fase de retroceso termina con `evolución | vacío | involución`. Las otras doce filas de cada fase conservan el orden y las etiquetas de la tabla de referencia. Cada concepto se representa como `io:OntoNode` con índices de fila, fase, posición, perspectiva posicional, dirección y etiqueta.
 
-Las columnas corresponden a izquierda/centro/derecha y a metadatos `Ind`/`D`/`Tot`. Esos nombres de perspectiva no sustituyen las etiquetas de las filas categoriales.
+El marco comprende **cinco perspectivas**: Individualidad (`Ind`), Dualidad (`D`), Totalidad (`Tot`), Evolución (`Evol`) e Involución (`Invol`). Las tres primeras son posicionales (izquierda/centro/derecha en cada tríada) y no sustituyen las etiquetas categoriales de las filas. Las dos últimas son vectoriales y describen las direcciones de flujo informativo.
 
 Las cuatro reglas de creación generan 104 aristas `io:creates`; los espejos entre fases son recíprocos y cambian izquierda/derecha, preservando centro. Hay 78 nodos de tríadas (13 × 2 fases × 3 posiciones).
 
-## Perspectivas vectoriales cuarta y quinta
+## Perspectivas cuarta y quinta: Evolución e Involución
 
 Las secuencias vigentes son:
 
 | Vector | Fase | Etiquetas (izquierda a derecha) | Eje | Flecha |
 |---|---|---|---|---|
-| Evolutivo | Avance | vacío · ind · dua · tot · evol | 0 · 1 · 2 · 3 · 4 | → |
-| Evolutivo | Retroceso | evol · tot · dua · ind · vacío | 4 · 3 · 2 · 1 · 0 | ← |
-| Involutivo | Avance | invol · tot · dua · ind · vacío | 4 · 3 · 2 · 1 · 0 | → |
-| Involutivo | Retroceso | vacío · ind · dua · tot · invol | 0 · 1 · 2 · 3 · 4 | ← |
+| Evolución | Avance | vacío · ind · dua · tot · evol | 0 · 1 · 2 · 3 · 4 | → |
+| Evolución | Retroceso | evol · tot · dua · ind · vacío | 4 · 3 · 2 · 1 · 0 | ← |
+| Involución | Avance | invol · tot · dua · ind · vacío | 4 · 3 · 2 · 1 · 0 | → |
+| Involución | Retroceso | vacío · ind · dua · tot · invol | 0 · 1 · 2 · 3 · 4 | ← |
 
 RDF conserva por separado el índice visual, el eje, la etiqueta y la flecha. Son 20 pasos en total.
 
